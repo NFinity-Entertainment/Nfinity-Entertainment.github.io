@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'HeartBubble';
+    src: url(fonts/Sweetbliss\ Personal\ Use.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'NFinityEnt.';
+    src: url(fonts/MotivateRegular-lx4PV.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'CheriS';
+    src: url(fonts/StylishCalligraphyDemo-XPZZ.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'Techy';
+    src: url(fonts/TrenchThin-aZ1J.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'Spliced';
+    src: url(fonts/Hostilbeveled-e50n.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'Title';
+    src: url(fonts/Neoneon-3zaD6.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+h1 {
+  font-family: 'NFinityEnt.';
+  color: black;
+}
+
+h2 {
+    color:#b1bef2;
+    font-family:'CheriS';
+    font-size: 50px;
+}
+h3 {
+    color: #615592;
+    font-family: 'HeartBubble';
+    font-size: 40px;
+}
+body {
+    text-align: center;
+    background-color: #e2d8ff;
+    color:#615592;
+    font-family: 'Techy';
+    font-size: 20px;
+}
+
+img {
+    height: 250px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color:#000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-decoration: none; 
+    background-color: #b1bef2;
+    border-radius: 6px; 
+    border: 1px solid rgba(97, 85, 146, 0.336);
+    transition: background-color 0.2s ease;
+    cursor: pointer;  
+}
+.button:hover {
+  background-color: #bac8ff;
+}
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 25px;
+    font-family: 'HeartBubble';
+    background-color: #b1bef2;
+    font-size: 20px;
+}
+#logo {
+    width: 75px;
+    height: auto;
+    display: block;
+}
+h4 {
+    font-size: 25px;
+    color: #b1bef2;
+    font-family: 'NFinityEnt.';
+}
+.member-grid {
+    display: grid;
+    /* Automatically fits as many 300px columns as possible side-by-side */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.member-card {
+    padding: 10px;
+    background-color: #f2e6f0;
+}
+
+.photo-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.photo-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+p {
+    margin: 50px;
+    color: #000000;
+    font-family: 'Techy';
+    font-size: 20px;
+}
+h5 {
+    font-size: 20px;
+    font-family: 'Techy';
+    color:#b1bef2
+}
+
+.NFinity-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: #e2d8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.NFinity-bg svg {
+  width: 60%;
+  height: auto;
+  opacity: 0.85;
+  transform-origin: center;
+}
+
+.loop-line {
+  fill: none;
+  stroke: #1A1A1A;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  /* Simulates the flowing "drawn" ribbon effect */
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  transform-origin: center;
+  animation: drawFlow 10s linear infinite, perspectiveTilt 12s ease-in-out infinite alternate;
+}
+
+.line-1 { animation-delay: 0.0s, 0.0s; stroke-opacity: 0.9; }
+.line-2 { animation-delay: 0.15s, 0.1s; stroke-opacity: 0.75; }
+.line-3 { animation-delay: 0.3s, 0.2s; stroke-opacity: 0.6; }
+.line-4 { animation-delay: 0.45s, 0.3s; stroke-opacity: 0.45; }
+.line-5 { animation-delay: 0.6s, 0.4s; stroke-opacity: 0.3; }
+
+@keyframes drawFlow {
+  0% {
+    stroke-dashoffset: 1200;
+  }
+  15% {
+    stroke-dashoffset: 0; /* Fully draws in early */
+  }
+  75% {
+    stroke-dashoffset: -400; /* Moves fluidly through the loop */
+  }
+  90%, 100% {
+    stroke-dashoffset: -1200; /* Erases completely before restart */
+  }
+}
+
+@keyframes perspectiveTilt {
+  0% {
+    transform: rotateX(20deg) rotateY(-15deg) scale(0.98);
+  }
+  50% {
+    transform: rotateX(10deg) rotateY(15deg) scale(1.02);
+  }
+  100% {
+    transform: rotateX(25deg) rotateY(-10deg) scale(0.98);
+  }
+}
+
+@keyframes lifecycle {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1) rotate(2deg);
+  }
+  /* --- Stable Flowing State (15% to 55%) --- */
+  55% {
+    opacity: 1;
+    transform: scale(1) rotate(-2deg);
+  }
+  /* --- The Pulse & Oscillation Climax (55% to 80%) --- */
+  60% {
+    transform: scale(1.12) rotate(8deg); /* Rapid pulse up and twist right */
+  }
+  65% {
+    transform: scale(0.95) rotate(-6deg); /* Bounce down and twist left */
+  }
+  70% {
+    transform: scale(1.08) rotate(5deg); /* Secondary smaller pulse */
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.98) rotate(-2deg); /* Stabilizing oscillation wave */
+    opacity: 0.9;
+  }
+  /* --- Disappearance State (80% to 100%) --- */
+  85%, 100% {
+    opacity: 0;
+    transform: scale(0.85) rotate(0deg); /* Fades down out of view */
+  }
+}
